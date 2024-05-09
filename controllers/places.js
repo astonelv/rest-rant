@@ -1,5 +1,6 @@
 const router = require('express').Router()
 
+//GET /places
 router.get('/', function(req,res){
         let places = [{
             name: 'H-Thai-ML',
@@ -16,7 +17,7 @@ router.get('/', function(req,res){
           }]
           
 
-    res.render('places/index', {places})
+    res.render('index', {places})
 })
 
 module.exports = router
