@@ -1,12 +1,16 @@
 const React = require('react')
-const Def = require ('../default')
+const Def = require('../default')
 
-//Places Formatting
-function index (data) {
-  let placesFormatted = data.places.map((place) => {
+function index(data) {
+  console.log(data)
+  let placesFormatted = data.places.map((place, index) => {
     return (
-      <div className="col-sm-6">
-        <h2>{place.name}</h2>
+      <div className="col-sm-6" key={place.id}>
+        <h2>
+          <a href={`/places/${index}`} >
+            {place.name}
+          </a>
+        </h2>
         <p className="text-center">
           {place.cuisines}
         </p>
@@ -17,20 +21,16 @@ function index (data) {
       </div>
     )
   })
-  
   return (
     <Def>
-        <main>
-            <h1>Places to Rant or Rave About</h1>
-            <div className="row">
-              {placesFormatted}
-            </div>
-        </main>
+      <main>
+        <h1>Places to Rant or Rave About</h1>
+        <div className="row">
+          {placesFormatted}
+        </div>
+      </main>
     </Def>
   )
 }
 
-
-  
-   
 module.exports = index

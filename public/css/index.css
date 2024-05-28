@@ -1,0 +1,75 @@
+* {
+  text-align: center;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+
+/* ******************* Nav Var Section ******************* */
+nav {
+  background-color: rgb(104, 205, 149);
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 25px;
+}
+
+nav a {
+  color: white;
+  font-size: 1.5em;
+}
+
+nav a:hover {
+  color: rgb(24, 24, 24);
+  text-decoration: none;
+}
+
+/* ******************* Others ******************* */
+h1 {
+  text-align: center;
+  color: cornflowerblue;
+}
+
+button {
+  background-color: rgb(37, 105, 232);
+  color: white;
+}
+
+img {
+  width: 300px;
+  height: auto;
+}
+
+form div {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 400px;
+}
+
+form input {
+  background-color: rgb(37, 105, 232);
+  color: white;
+  width: 150px;
+}
+
+footer {
+  background-color: rgb(104, 205, 149);
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  width: 100vw; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  

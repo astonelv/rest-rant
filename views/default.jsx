@@ -6,9 +6,25 @@ function Def (html) {
             <head>
                 <title>Title</title>
                 <link rel="stylesheet" href= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
-                <link rel="stylesheet" href= "public\css\style.css"/>
+                <link rel="stylesheet" href= "public/index.css"/>
             </head>
             <body>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/places">Places</a>
+                        </li>
+                        <li>
+                            <a href="/places/new">Add Place</a>
+                        </li>
+                    </ul>
+                </nav>
+                <footer className="footer">
+                    <h3>Best Footer</h3>
+                </footer>
                 {html.children}
             </body>
         </html>
@@ -16,4 +32,3 @@ function Def (html) {
 }
 
 module.exports = Def;
-
