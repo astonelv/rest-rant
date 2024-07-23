@@ -7,26 +7,23 @@ function new_form() {
             <main>
                 <h1>Add a New Place</h1>
                 <form method="POST" action="/places">
-                    {/* Old Code */}
                     <div className="form-group">
                         <label htmlFor="name">Place Name</label>
                         <input className="form-control" id="name" name="name" required />
                     </div>
-
                     <div className="form-group">
                         <label htmlFor="pic">Place Picture</label>
                         <input className="form-control" id="pic" name="pic" />
                     </div>
-
                     <div className="form-group">
                         <label htmlFor="city">City</label>
                         <input className="form-control" id="city" name="city" />
                     </div>
-
                     <div className="form-group">
                         <label htmlFor="state">State</label>
                         <input className="form-control" id="state" name="state" />
                     </div>
+<<<<<<< HEAD
 
                     {/* New Code */}
                     <div className="form-group">
@@ -35,6 +32,8 @@ function new_form() {
                     </div>
 
                     {/* Old Code */}
+=======
+>>>>>>> parent of 0deab15 (finish)
                     <div className="form-group">
                         <label htmlFor="cuisines">Cuisines</label>
                         <input className="form-control" id="cuisines" name="cuisines" required />
@@ -46,7 +45,4 @@ function new_form() {
     );
 }
 
-console.log('')
-console.log('In Add Places.show.jsx')
-console.log('')
 module.exports = new_form;

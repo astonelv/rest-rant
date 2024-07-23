@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const mongoose = require('mongoose')
 
 const placeSchema = new mongoose.Schema({
@@ -10,3 +11,18 @@ const placeSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Place', placeSchema)
+=======
+module.exports = [{
+    name: 'H-Thai-ML',
+    city: 'Seattle',
+    state: 'WA',
+    cuisines: 'Thai, Pan-Asian',
+    pic: 'images/thai-food.jpeg'
+}, {
+    name: 'Coding Cat Cafe',
+    city: 'Phoenix',
+    state: 'AZ',
+    cuisines: 'Coffee, Bakery',
+    pic: 'images/cofee.jpeg'
+}]
+>>>>>>> parent of 0deab15 (finish)
