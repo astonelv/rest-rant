@@ -23,17 +23,6 @@ function new_form() {
                         <label htmlFor="state">State</label>
                         <input className="form-control" id="state" name="state" />
                     </div>
-<<<<<<< HEAD
-
-                    {/* New Code */}
-                    <div className="form-group">
-                        <label for="founded">Founded Year</label>
-                        <input className="form-control" id="founded" name="founded" />
-                    </div>
-
-                    {/* Old Code */}
-=======
->>>>>>> parent of 0deab15 (finish)
                     <div className="form-group">
                         <label htmlFor="cuisines">Cuisines</label>
                         <input className="form-control" id="cuisines" name="cuisines" required />
