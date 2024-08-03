@@ -1,6 +1,11 @@
 const router = require('express').Router()
 const db = require('../models')
 
+// NEW
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
+
 // INDEX
 router.get('/', (req, res) => {
   db.Place.find()
@@ -39,11 +44,6 @@ router.post('/', (req, res) => {
     })
 })
 
-// NEW
-router.get('/new', (req, res) => {
-  res.render('places/new')
-})
-
 // SHOW
 router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
@@ -56,31 +56,6 @@ router.get('/:id', (req, res) => {
       console.log('err', err)
       res.render('error404')
     })
-})
-
-
-router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
-})
-
-// DELETE
-router.delete('/:id', (req, res) => {
-  res.send('DELETE /places/:id stub')
-})
-
-// EDIT
-router.get('/:id/edit', (req, res) => {
-  res.send('GET edit form stub')
-})
-
-// 
-router.post('/:id/rant', (req, res) => {
-  res.send('GET /places/:id/rant stub')
-})
-
-// DELETE
-router.delete('/:id/rant/:rantId', (req, res) => {
-  res.send('GET /places/:id/rant/:rantId stub')
 })
 
 // CREATE COMMENT
@@ -116,6 +91,51 @@ router.post("/:id/comment", (req, res) => {
       res.render("error404");
     });
 });
+
+// UPDATE
+router.put('/:id', (req, res) => {
+  db.Place.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+      res.redirect(`/places/${req.params.id}`)
+    })
+    .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+    })
+})
+
+// DELETE
+router.delete('/:id', (req, res) => {
+  db.Place.findByIdAndDelete(req.params.id)
+    .then(place => {
+      res.redirect('/places')
+    })
+    .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+    })
+})
+
+// EDIT 
+router.get("/:id/edit", (req, res) => {
+  db.Place.findById(req.params.id)
+    .then((place) => {
+      res.render("places/edit", { place });
+    })
+    .catch((err) => {
+      res.render("error404");
+    });
+});
+
+// Rant
+router.post('/:id/rant', (req, res) => {
+  res.send('GET /places/:id/rant stub')
+})
+
+// DELETE Stub
+router.delete('/:id/rant/:rantId', (req, res) => {
+  res.send('GET /places/:id/rant/:rantId stub')
+})
 
 module.exports = router
 
